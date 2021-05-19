@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { ROUTES } from "../Constant/route.constant";
-import Footer from "../Pages/Footer";
-import Header from "../Pages/Header";
+import Footer from "../Components/Footer";
+import Header from "../Components/Header";
 import PrivateRoute from "./private.route";
 
 const RouteList = () => {

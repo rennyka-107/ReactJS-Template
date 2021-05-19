@@ -1,18 +1,14 @@
 import { isEmpty } from "lodash";
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { TODO_ACTION } from "../../Redux/Action";
-import { GetTodoSelector } from "../../Redux/Selector";
 import { removeAuth } from "../../Utils/localStorage";
 
-const Home = () => {
-  const dispatch = useDispatch();
-  const todoSelector = GetTodoSelector();
-  const { todoList } = todoSelector;
-  console.log(todoSelector);
+const Home = (props) => {
+  const { todoReducer, getTodo } = props;
+  const { todoList } = todoReducer;
   useEffect(() => {
-    dispatch(TODO_ACTION.GET_TO_DO());
-  },[]);
+    getTodo();
+  }, [getTodo]);
+
   const logOut = () => {
     removeAuth();
     window.location.reload();

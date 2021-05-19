@@ -5,19 +5,19 @@ export const AUTH_TYPE = {
 };
 
 export const AUTH_ACTION = {
-  LOGIN: (params) => {
+  login: (params) => {
     return {
       type: AUTH_TYPE.LOGIN,
       data: params,
     };
   },
-  LOGIN_SUCCESS: (data) => {
+  loginSuccess: (data) => {
     return {
       type: AUTH_TYPE.LOGIN_SUCCESS,
       data: data,
     };
   },
-  LOGIN_FAIL: (err) => {
+  loginFail: (err) => {
     return {
       type: AUTH_TYPE.LOGIN_FAIL,
       data: err,

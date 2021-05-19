@@ -1,9 +1,11 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "./style/style.scss";
-import Login from "./Pages/Login";
+import "./assets/style/style.scss";
+import Login from "./Redux/Connect/login.connect";
 import RouteList from "./Route";
 import { Provider } from "react-redux";
 import store from "./Redux";
+import { Suspense } from "react";
+import Loading from "./Components/Loading";
 
 function App() {
   return (
@@ -11,7 +13,9 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/login" component={Login} />
-          <Route path="/" component={RouteList} />
+          <Suspense fallback={<Loading />}>
+            <Route path="/" component={RouteList} />
+          </Suspense>
         </Switch>
       </Router>
     </Provider>

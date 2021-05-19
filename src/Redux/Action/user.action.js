@@ -5,18 +5,18 @@ export const USER_TYPE = {
 };
 
 export const USER_ACTION = {
-  GET_ALL_USERS: () => {
+  getAllUsers: () => {
     return {
       type: USER_TYPE.GET_ALL_USERS,
     };
   },
-  GET_ALL_USERS_SUCCESS: (data) => {
+  getAllUsersSuccess: (data) => {
     return {
       type: USER_TYPE.GET_ALL_USERS_SUCCESS,
       data: data,
     };
   },
-  GET_ALL_USERS_FAIL: (err) => {
+  getAllUsersFail: (err) => {
     return {
       type: USER_TYPE.GET_ALL_USERS_FAIL,
       data: err,

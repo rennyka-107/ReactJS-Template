@@ -5,18 +5,18 @@ export const TODO_TYPE = {
 };
 
 export const TODO_ACTION = {
-  GET_TO_DO: () => {
+  getTodo: () => {
     return {
       type: TODO_TYPE.GET_TO_DO,
     };
   },
-  GET_TO_DO_SUCCESS: (data) => {
+  getTodoSuccess: (data) => {
     return {
       type: TODO_TYPE.GET_TO_DO_SUCCESS,
       data: data,
     };
   },
-  GET_TO_DO_FAIL: (err) => {
+  getTodoFail: (err) => {
     return {
       type: TODO_TYPE.GET_TO_DO_FAIL,
       data: err,
